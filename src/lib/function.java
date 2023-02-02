@@ -18,8 +18,9 @@ public class function {
             System.out.println("1. Bath\n2. BTC");
             do{
                 try{
-                    typeShow = textFieldNumber("Please enter (1-2) : ");
-                    break;
+                    typeShow = textFieldNumber("Please enter (1 or 2) : ");
+                    if(typeShow >= 1 || typeShow <= 2) break;
+                    else System.out.println("!!!------ Please enter number 1 or 2 ------!!!");
                 }catch(Exception e){
                     System.out.println("!!!------ Please enter number ------!!!");
                 }
