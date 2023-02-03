@@ -19,7 +19,7 @@ public class function {
             do{
                 try{
                     typeShow = textFieldNumber("Please enter (1 or 2) : ");
-                    if(typeShow >= 1 || typeShow <= 2) break;
+                    if(typeShow >= 1 && typeShow <= 2) break;
                     else System.out.println("!!!------ Please enter number 1 or 2 ------!!!");
                 }catch(Exception e){
                     System.out.println("!!!------ Please enter number ------!!!");
