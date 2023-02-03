@@ -125,6 +125,9 @@ public class ATM implements ATMAction {
         String IdAdmin;
         String pwAdmin;
 
+        //PathDB
+        String PathDB = "src/db.json";
+
         JSONParser parser = new JSONParser();
         JSONObject adminDB = new JSONObject();
 
@@ -132,7 +135,7 @@ public class ATM implements ATMAction {
             float BTCtoBath = 0;
 
         try {
-            Object admin = parser.parse(new FileReader("src/db.json"));
+            Object admin = parser.parse(new FileReader(PathDB));
             adminDB = (JSONObject)admin;
         } catch(Exception e) {
             e.printStackTrace();
@@ -162,7 +165,7 @@ public class ATM implements ATMAction {
 
                 System.out.println(adminDB);
                 
-                FileWriter adminNew = new FileWriter("src/db.json");
+                FileWriter adminNew = new FileWriter(PathDB);
                 adminNew.write(adminDB.toJSONString());
                 adminNew.close();
 
